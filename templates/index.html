@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Loan Approval Predictor</title>
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #f3f7fc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-align: center;
+            width: 400px;
+        }
+        input, select {
+            width: 90%;
+            padding: 10px;
+            margin: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .user-text{
+            width: 85%;
+            padding: 10px;
+            margin: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #0066ff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover { background-color: #004ecc; }
+        h2 { color: #333; }
+        .result { font-size: 18px; margin-top: 15px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>🏦 Loan Approval Prediction</h2>
+        <form action="/predict" method="POST">
+            <select name="gender" required>
+                <option value="1">Male</option>
+                <option value="0">Female</option>
+            </select>
+
+            <select name="married" required>
+                <option value="1">Married</option>
+                <option value="0">Single</option>
+            </select>
+
+            <input class="user-text" type="number" name="income" placeholder="Applicant Income" required min="0">
+            <input class="user-text" type="number" name="loan" placeholder="Loan Amount" required min="0">
+
+            <select name="credit" required>
+                <option value="1">Good Credit (1)</option>
+                <option value="0">Bad Credit (0)</option>
+            </select>
+
+            <button type="submit">Predict</button>
+        </form>
+
+        {% if result %}
+            <div class="result">{{ result }}</div>
+        {% endif %}
+    </div>
+</body>
+</html>
