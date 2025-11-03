@@ -117,7 +117,8 @@ joblib.dump(model, 'loan_model.pkl')
 
 ### Example Screenshot:
 
-📷 *\[Add your screenshot here]*
+<img width="1900" height="917" alt="Screenshot 2025-11-03 112022" src="https://github.com/user-attachments/assets/219b5833-dfb7-463c-95fd-1c918416e7b4" />
+
 
 ---
 
