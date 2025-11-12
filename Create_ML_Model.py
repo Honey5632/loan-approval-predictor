@@ -1,10 +1,9 @@
-# train_model.py
 import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 import joblib
 
-# Example dataset — replace with a real dataset (CSV) later
+# Example dataset replace with a real dataset (CSV) later
 data = {
     'Gender': ['Male', 'Female', 'Male', 'Male', 'Female', 'Female', 'Male', 'Female'],
     'Married': ['Yes', 'No', 'Yes', 'No', 'Yes', 'No', 'Yes', 'No'],
@@ -31,3 +30,4 @@ model.fit(X_train, y_train)
 # Save model
 joblib.dump(model, "loan_model.pkl")
 print("Model trained and saved: loan_model.pkl")
+
